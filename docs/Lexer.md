@@ -51,3 +51,24 @@ str // (= char[])
 bool
 byte
 ```
+
+### Reserved Keywords
+
+```py
+use             # package management
+
+fn              # universal declaration of code: first-class function, attributes, etc.
+type            # universal structure/enum/type declaration
+for, in, next   # repetetive control flow
+ret             # return scope
+if, el, case    # conditional control flow
+
+throw           # throw an exception
+
+be              # declaration, etc.
+self            # recursive self or parent reference
+
+true, false,    # values
+
+T, _         # Type and null value
+```
