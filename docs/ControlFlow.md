@@ -46,7 +46,7 @@ fn int_function (i num) -> num {
 }
 ```
 
-### Functions
+## Functions
 
 Functions are blocks of logic that can be automated to act in a certain order. All functions, unless lambdas, are declared with the `fn` keyword. A function is automatically exited at the end of its' scope or earlier with the `ret` keyword
 
@@ -73,3 +73,29 @@ fn sum (num1 int, num2 int) -> int {
 #### Lambdas
 
 Lambdas are annotated with `=>`, a basic example would be `i => 2 * i`, thought it needs to be said that scopes annotated with fn can also be used as lambdas `fn (i) {2 * i}`
+
+## Conditionals and Loops
+
+Conditionals are boolean type operations that can be used to jump between blocks. Three keywords are of most importance to conditional jumps: `if`, `el`, `case`. Loops are cycles in a graph, but in programming it is an indicator of repeat code execution. The main keywords here are `for`, `in` and `next`. Both can be put together into one logic block, however the document will first take a look at separated behaviour.
+
+### Conditionals
+
+```
+if stmt {
+    ...
+} el if stmt {
+    ...
+} el if stmt {
+    ...
+} el {
+    ...
+}
+```
+
+#### Comparators
+
+The language should support special nests of comparison operators, it is semantically correct to say that `0 < x < 10` implies that x is in an exclusive range from 0 to 10, so it should also be syntactically valid. Additionally, mathematically speaking `a = b = c` is equivalent to `a = b` and `b = c` and `a = c`
+
+```
+0 <= rng < 10
+```
