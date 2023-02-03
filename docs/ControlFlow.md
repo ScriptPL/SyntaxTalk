@@ -41,6 +41,7 @@ Keeping the idea of few keywords, minimalism, but a lot of functionality and syn
 ```
 fn int_function (i uint) {
     be: i != 0
+    
     ret 1 / i
 }
 ```
