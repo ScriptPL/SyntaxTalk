@@ -98,4 +98,8 @@ The language should support special nests of comparison operators, it is semanti
 
 ```
 0 <= rng < 10
+val1 == val2 == val3
+x > y
+z <= 0
+a && b && c
 ```
