@@ -38,3 +38,16 @@ be variable = 0
 be _hidden_attribute = "This is a private field."
 ```
 
+### Primitive Types
+
+```js
+uint(64)
+int
+int(32)
+unum
+num
+char
+str // (= char[])
+bool
+byte
+```
