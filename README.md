@@ -26,6 +26,6 @@ fn main {
 
 The idea is to create a minimalist but powerful programming language.
 
-## Lexer
+# Ideas
 
-### Comments
+- [`Lexer.........`](https://github.com/ScriptPL/SyntaxTalk/blob/main/docs/Lexer.md) 
