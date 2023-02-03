@@ -33,3 +33,14 @@ be can also be used to destruct a complex value collection into pieces or gettin
 be a, b, c, d = complex_structure
 be func1, func2, constant1 = use 'module'
 ```
+
+#### 'be' as in 'it shall be'
+
+Keeping the idea of few keywords, minimalism, but a lot of functionality and syntactic sugar the second meaning after 'it can be' is 'it shall be' where compile time assertions are supported. Using `be: statement` it is made sure that at no cost an invalid parameter is given.
+
+```
+fn int_function (i uint) {
+    be: i != 0
+    ret 1 / i
+}
+```
