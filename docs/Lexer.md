@@ -72,3 +72,23 @@ true, false,    # values
 
 T, _         # Type and null value
 ```
+
+### Symbols
+
+```py
+# Maths and Math Setters
++       -       *       /       %       ^
++=      -=      *=      /=      %=      ^=
+
+# Logic and Logic Setters
+|       &       |=      &=      !       ||
+&&      ||=     &&=
+
+# Brackets
+{       [       (       )       ]       }
+<       >       !=      ==
+
+# Special Characters
+.       ...     :       ,       ;       ?
+@       <<      >>      <<<     >>>     ?.
+```
