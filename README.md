@@ -28,4 +28,4 @@ The idea is to create a minimalist but powerful programming language.
 
 # Ideas
 
-- [`Lexer.........`](https://github.com/ScriptPL/SyntaxTalk/blob/main/docs/Lexer.md) 
+- [`Lexer...............................`](https://github.com/ScriptPL/SyntaxTalk/blob/main/docs/Lexer.md) All ideas regarding the lexer (string to token converter of the programming language)
