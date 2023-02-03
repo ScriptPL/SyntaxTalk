@@ -87,7 +87,13 @@ T, _         # Type and null value
 
 # Brackets
 {       [       (       )       ]       }
-<       >       !=      ==
+<       >
+
+# Comparison
+!=      ==      <=      >=
+
+# Arrows
+=>      ->      =<
 
 # Special Characters
 .       ..      ...     :       ,       ;
