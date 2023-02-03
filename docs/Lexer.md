@@ -90,6 +90,6 @@ T, _         # Type and null value
 <       >       !=      ==
 
 # Special Characters
-.       ...     :       ,       ;       ?
-@       <<      >>      <<<     >>>     ?.
+.       ..      ...     :       ,       ;
+?       @       <<      >>      <<<     >>>
 ```
