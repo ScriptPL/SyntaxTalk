@@ -39,9 +39,37 @@ be func1, func2, constant1 = use 'module'
 Keeping the idea of few keywords, minimalism, but a lot of functionality and syntactic sugar the second meaning after 'it can be' is 'it shall be' where compile time assertions are supported. Using `be: statement [, compile_error_message]` it is made sure that at no cost an invalid parameter is given, optionally followed by an error message.
 
 ```
-fn int_function (i uint) {
+fn int_function (i num) -> num {
     be: i != 0, "cannot divide by zero"
     
     ret 1 / i
 }
 ```
+
+### Functions
+
+Functions are blocks of logic that can be automated to act in a certain order. All functions, unless lambdas, are declared with the `fn` keyword. A function is automatically exited at the end of its' scope or earlier with the `ret` keyword
+
+```
+fn is_divisible (dividend uint, divisor uint) -> bool {
+    be: divisor != 0, "cannot divide by zero"
+
+    if dividend % divisor == 0 {
+        ret true
+    }
+    
+    ret false
+}
+```
+
+To keep things small and clean, a function with one line of code is [Rust](https://www.rust-lang.org/)-like automatically executing the line as a return value
+
+```
+fn sum (num1 int, num2 int) -> int {
+    num1 + num2
+}
+```
+
+#### Lambdas
+
+Lambdas are annotated with `=>`, a basic example would be `i => 2 * i`, thought it needs to be said that scopes annotated with fn can also be used as lambdas `fn (i) {2 * i}`
