@@ -63,6 +63,7 @@ for, in, next   # repetetive control flow
 ret             # return scope
 if, el, case    # conditional control flow
 
+sync            # synchronization indicator
 throw           # throw an exception
 
 be              # declaration, etc.
