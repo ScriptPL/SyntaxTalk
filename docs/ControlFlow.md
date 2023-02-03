@@ -36,11 +36,11 @@ be func1, func2, constant1 = use 'module'
 
 #### 'be' as in 'it shall be'
 
-Keeping the idea of few keywords, minimalism, but a lot of functionality and syntactic sugar the second meaning after 'it can be' is 'it shall be' where compile time assertions are supported. Using `be: statement` it is made sure that at no cost an invalid parameter is given.
+Keeping the idea of few keywords, minimalism, but a lot of functionality and syntactic sugar the second meaning after 'it can be' is 'it shall be' where compile time assertions are supported. Using `be: statement [, compile_error_message]` it is made sure that at no cost an invalid parameter is given, optionally followed by an error message.
 
 ```
 fn int_function (i uint) {
-    be: i != 0
+    be: i != 0, "cannot divide by zero"
     
     ret 1 / i
 }
