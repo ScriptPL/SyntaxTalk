@@ -12,5 +12,7 @@ The most simple kind of type is a tag, it does not store and data and may functi
 
 Given other existing types, a new type can refer to another type with generics or as an array
 
-``type str = char()
-type IntVec = Vec<int>``
+```
+type str = char()
+type IntVec = Vec<int>
+```
