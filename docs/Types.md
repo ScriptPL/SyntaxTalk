@@ -96,6 +96,14 @@ be s str # Declaring variable without initializing
 if be Enum.Member3 (string_variable, numeric_variable) = e {
     # e is Enum.Member3 and variables can be used
 }
+
+if e {
+    case Enum.Member3(string_variable, numeric_variable)
+        # ...
+
+    case Enum.Member2 | Enum.Member3
+        # ...
+}
 ```
 
 ## Methods
@@ -121,3 +129,4 @@ be k Type
 Type.this_is_static()   # static function call
 k.this_is_dynamic(5)    # dynamic method call
 ```
+
