@@ -94,7 +94,7 @@ if stmt {
 
 #### Comparators
 
-The language should support special nests of comparison operators, it is semantically correct to say that `0 < x < 10` implies that x is in an exclusive range from 0 to 10, so it should also be syntactically valid. Additionally, mathematically speaking `a = b = c` is equivalent to `a = b` and `b = c` and `a = c`
+The language should support special nests of comparison operators, it is semantically correct to say that `0 < x < 10` implies that x is in an exclusive range from 0 to 10, so it should also be syntactically valid. Additionally, supporting transitivity, mathematically speaking `a = b = c` is equivalent to `a = b` and `b = c` and `a = c`. This is the case for `<`, `<=`, `>`, `==`, `>=`, `!=` and like in other programming languages `&&` and `||`
 
 ```
 0 <= rng < 10
@@ -102,4 +102,41 @@ val1 == val2 == val3
 x > y
 z <= 0
 a && b && c
+l1 || l2
+```
+
+#### 'in' as a preposition
+
+`x in y` can be interpreted like a function `in(x, y)` and overriden. Such is the case for types `[str] in [str]` for contains substring, `[T] in [array of T]` for contains element, range detection like `num in range` for finding if an element is part of range, or the classic `variable in Trait` to see wether the variable is part of a certain trait logic.
+X has to be a constant and not declared using `be` for ambigiouty between 'in' as in 'for ... in ...'
+
+```
+'Hello' in 'Hello, World!'  # true
+'Hi!' in 'Hello, World!'    # false
+```
+
+#### Switches
+
+The language should support switch statements by declaring `case`s within an if block. To declare a constant case, use `case x`, to nest several constants use the vertical bar for separation `case 0 | 1 | 5` or start writing logic with in brackets: `case 0 | (x > 10)`
+
+```
+if value {
+    case condition
+        # code
+    case condition1
+        # code
+} el {
+    # not case
+}
+```
+
+```
+fn fibonacci (x uint) {
+    if x {
+        case 0 | 1
+            ret 1
+    } el {
+        ret self (x - 1)        # self is equal to `fibonacci` here
+    }
+}
 ```
