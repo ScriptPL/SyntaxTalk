@@ -59,9 +59,41 @@ type LinkedList <Type> (
 )
 
 type Result <TOk, TErr> (
-    Ok(TOk),
+    Ok(TOk) |
     Err(TErr)
 )
 
-type Option <Content> = Result <Content, ()>
+type OnlyOk <Content> = Result <Content, ()>
+
+type Option <C> = (Null | Has(C))
+```
+
+#### Semantic Sugar: Option Shortcut
+
+```
+    be k int? = null # This is not 'null' like in other programming languages, but an unpacked enum member.
+```
+
+### Initialization
+
+```
+be s = Structure (
+    field1 = 0,
+    field3 = AnotherType.new()
+)
+
+be e = Enum.Member2
+   e = Enum.Member3 ("Hello", 100)
+   
+be s str # Declaring variable without initializing
+```
+
+### Enum Unpacking
+
+[Rust like flow control with enum](https://doc.rust-lang.org/rust-by-example/flow_control/if_let.html) is a must have!
+
+```
+if be Enum.Member3 (string_variable, numeric_variable) = e {
+    # e is Enum.Member3 and variables can be used
+}
 ```
