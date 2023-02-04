@@ -25,6 +25,8 @@ be number = 77
 be casted = uint 0
 ```
 
+The keyword `self` is used to refer to the self scope. For types it represents a function like `this` in Java and JavaScript, etc.
+
 #### Unpacking Structures and Imports
 
 be can also be used to destruct a complex value collection into pieces or getting certain values from imports.
