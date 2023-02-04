@@ -282,6 +282,36 @@ Operator  | Function                 | Explanation
    .      | fn '.' (self, str) -> T  | self.mA     # Member Access, `mA` is provided as String
 ```
 
+##### Iterator Function
+
+Inspired from JavaScript's [yield](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/yield)
+
+```
+fn* iterable_func() -> int {
+    be i = 0
+    for 4 {
+        printl("calculation step")
+        next i
+        i += 1
+    }
+    ret 0
+}
+
+be iterator = iterable_func()
+
+iterator.hasNext()  # true
+# calculation step  # hasNext calculates next value to see
+                    # if function returns or yields. next()
+                    # simply returns the value
+iterator.next()     # 0
+iterator.next()     # 1
+iterator.next()     # 2
+iterator.hasNext()  # true
+iterator.next()     # 3
+iterator.hasNext()  # false
+iterator.next()     # 0
+```
+
 ### Generics with Traits
 
 A function can expect a certain type or a certain trait implementation:
