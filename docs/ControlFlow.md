@@ -170,3 +170,29 @@ Provided an iterable, we can quickly navigate through it with the statement `for
 #### Labels, Continue and Break
 
 To identify which loop should be changed, a loop has to be assigned a label in the format `for <label> ...`. To jump to the next iteration, you would then use `next <label>`, to break the current iteration you would "return" form it with `ret <label>`
+
+### Combined Logic Blocks
+
+Python like nesting of _conditional_ loops and conditions should be supported:
+
+```
+for condition {
+    # if you land here you get at least one iteration
+} el {
+    # if you land here you got zero iterations (condition was false from the very beginning)
+}
+
+if condition {
+    # if true
+} el for {
+    # if false
+}
+
+for condition {
+    # ...
+} el if condition1 {
+    # ...
+} el for condition2 {
+    # ...
+}
+```
