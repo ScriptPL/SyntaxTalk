@@ -165,4 +165,22 @@ A while loop is a started by writing a condition after the `for` keyword. To loo
 
 #### 'in' as in 'for ... in ...'
 
-TBA
+Provided an iterable, we can quickly navigate through it with the statement `for be ... in iterable`.
+
+#### Labels, Continue and Break
+
+To identify which loop should be changed, a loop has to be assigned a label in the format `for <label> ...`. To jump to the next iteration, you would then use `next <label>`, to break the current iteration you would "return" form it with `ret <label>`
+
+#### ~~Return value from loop~~
+
+~~A loop's output can also be reused by providing arguments after the return statement.~~
+
+~~``
+be contains_a bool = for<a> be element in array_of_strings {
+    if element.contains('a') ret<a> true
+} el {
+    ret<a> false
+}
+``~~
+
+_(This needs to be carefully thought through.)_
