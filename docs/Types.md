@@ -204,7 +204,14 @@ Data {
 Taking a look at mathematical operations, `a * b` can be interpreted as `mul(a, b) -> int`. Following the same logic, different types can implement this special (native) traits
 
 ```
-Data {
+# Implement Add trait with Data as right argument,
+# so that we implement (Data + Data) -> Data
+# Alternatively we can implement a (Data + int)
+# -> int addition or other with `Data<int, int>`
+#
+# <right parameter, return data>
+
+Data use Add<Data, Data> {
     fn '+' (self, Data right) -> Data {
         self.new(self.name + right.name)
     }
@@ -273,4 +280,21 @@ This is the list of special/ danger traits:
 Operator  | Function                 | Explanation
    ?      | fn '?' (self) -> T       | self?       # Unary, from behind
    .      | fn '.' (self, str) -> T  | self.mA     # Member Access, `mA` is provided as String
+```
+
+### Generics with Traits
+
+A function can expect a certain type or a certain trait implementation:
+
+```
+fn (val Type) ...
+fn <T> (val T) ...
+fn <T use Trait> (val T) ...
+
+fn <T use
+    Add<int, > +
+    Mul<int, T>
+> (val T) -> int {
+    ret val * 2
+}
 ```
