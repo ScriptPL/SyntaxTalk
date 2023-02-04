@@ -175,12 +175,14 @@ To identify which loop should be changed, a loop has to be assigned a label in t
 
 ~~A loop's output can also be reused by providing arguments after the return statement.~~
 
-~~``
+<s>
+```
 be contains_a bool = for<a> be element in array_of_strings {
     if element.contains('a') ret<a> true
 } el {
     ret<a> false
 }
-``~~
+```
+</s>
 
 _(This needs to be carefully thought through.)_
