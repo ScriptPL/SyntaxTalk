@@ -39,6 +39,8 @@ type Structure (
 )
 ```
 
+Note on Visibility: A variable becomes private when it's starting character is `_`: `_private_variable`
+
 #### Tuples
 
 ```
