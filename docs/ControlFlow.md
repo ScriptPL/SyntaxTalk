@@ -108,7 +108,7 @@ l1 || l2
 #### 'in' as a preposition
 
 `x in y` can be interpreted like a function `in(x, y)` and overriden. Such is the case for types `[str] in [str]` for contains substring, `[T] in [array of T]` for contains element, range detection like `num in range` for finding if an element is part of range, or the classic `variable in Trait` to see wether the variable is part of a certain trait logic.
-X has to be a constant and not declared using `be` for ambigiouty between ['in' as in 'for ... in ...']
+X has to be a constant and not declared using `be` for ambigiouty between ['in' as in 'for ... in ...'](#in-as-in-for--in-)
 
 ```
 'Hello' in 'Hello, World!'  # true
