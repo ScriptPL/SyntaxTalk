@@ -130,3 +130,145 @@ Type.this_is_static()   # static function call
 k.this_is_dynamic(5)    # dynamic method call
 ```
 
+### Traits
+
+#### Declaration
+
+A trait is a `type` that contains a collection of a functions `fn`, hence the syntactic declaration `type fn`
+
+```
+type fn Trait {
+    fn dynamic_method(self, usize, str)
+    fn dynamic_method_without_args(self)
+}
+```
+
+#### Implementing Trait for a Type
+
+A type 'implements' a trait or it simply `use`s that behaviour.
+
+```
+Type use Trait {
+    fn dynamic_method(self, usize, str) {
+        ...
+    }
+    
+    fn dynamic_method_without_args (self) {
+        ...
+    }
+}
+```
+
+#### Native Functions
+
+##### Auto-Declaration
+
+By default, declaring a type with `be v Type` requires the type to be initializied in all blocks of possible logic, however sometimes the code may be too huge and a 'default' initiailizer is wanted. The function `'be'` declared a variables in all scopes where it's not overwritten. Alternatively, following a convention you can create a 'new' method which creates a new data instance of the type.
+
+```
+type Data (
+    id uint,
+    name str = "",
+)
+
+Data {
+    be static_id uint = 0
+
+    fn 'be' (self) -> Type {
+        ret self.new()
+    }
+    
+    fn new () -> Type {
+        static_id += 1
+        
+        ret Type (
+            id = static_id
+        )
+    }
+    
+    fn new (value str) -> Type {
+        static_id += 1
+        
+        ret Type (
+            id = static_id
+            name = value
+        )
+    }
+}
+```
+
+##### Native Traits
+
+Taking a look at mathematical operations, `a * b` can be interpreted as `mul(a, b) -> int`. Following the same logic, different types can implement this special (native) traits
+
+```
+Data {
+    fn '+' (self, Data right) -> Data {
+        self.new(self.name + right.name)
+    }
+}
+```
+
+This is the list of mathematical traits:
+
+```
+Operator  | Function                 | Explanation
+   +      | fn '+' (self, T1) -> T2  | self + T1
+   +      | fn '+' (self) -> T       | + self      # Unary
+   -      | fn '-' (self, T1) -> T2  | self - T1
+   -      | fn '-' (self) -> T       | - self      # Unary
+   *      | fn '*' (self, T1) -> T2  | self * T2
+   /      | fn '/' (self, T1) -> T2  | self / T2
+   %      | fn '%' (self, T1) -> T2  | self % T2
+   ^      | fn '^' (self, T1) -> T2  | self ^ T2
+   <<     | fn '<<' (self, T1) -> T2  | self << T2
+   >>     | fn '>>' (self, T1) -> T2  | self >> T2
+```
+
+This is the list of logical traits:
+
+```
+Operator  | Function                 | Explanation
+   &&     | fn '&&' (self, T1) -> T2 | self && T1
+   ||     | fn '||' (self, T1) -> T2 | self || T1
+   !      | fn '!' (self) -> T       | !self       # Unary
+   ==     | fn '==' (self, T1) -> T2 | self == T1
+   !=     | fn '!=' (self, T1) -> T2 | self != T1
+   >=     | fn '>=' (self, T1) -> T2 | self >= T1
+   >      | fn '>' (self, T1) -> T2  | self > T1
+   <=     | fn '<=' (self, T1) -> T2 | self <= T1
+   <      | fn '<' (self, T1) -> T2  | self < T1
+```
+
+This is the list of setter traits:
+
+```
+Operator  | Function                 | Explanation
+   =      | fn '=' (self, T1) -> T2  | self = T1
+   +=     | fn '+=' (self, T1) -> T2 | self += T1
+   -=     | fn '-=' (self, T1) -> T2 | self -= T1
+   *=     | fn '*=' (self, T1) -> T2 | self *= T2
+   /=     | fn '/=' (self, T1) -> T2 | self /= T2
+   %=     | fn '%=' (self, T1) -> T2 | self %= T2
+   ^=     | fn '^=' (self, T1) -> T2 | self ^= T2
+   <<=    | fn '<<=' (self, T1) -> T2| self <<= T2
+   >>=    | fn '>>=' (self, T1) -> T2| self >>= T2
+   &&=    | fn '&&=' (self, T1) -> T2| self &&= T1
+   ||=    | fn '||=' (self, T1) -> T2| self ||= T1
+   
+Default Implementation for integers:
+
+uint {
+    fn '+=' (self, value uint) {
+        self = self + value
+    }
+}
+```
+
+This is the list of special/ danger traits:
+
+```
+Operator  | Function                 | Explanation
+   ?      | fn '?' (self) -> T       | self?       # Unary, from behind
+   .      | fn '.' (self, str) -> T  | self.mA     # Member Access, `mA` is provided as String
+```
