@@ -2,7 +2,7 @@
 
 ### Imports and Package Managing
 
-Keeping minimalist standarts, the only keyword for importats is `use` which is followed by a string literal tracking the name of the package or file. The Lexer automatically scans for the keyword and starts lexing packages before the entry file is finished lexing.
+Keeping minimalist standarts, the only keyword for importats is `use` which is followed by a string literal tracking the name of the package or file. The Lexer automatically scans for the keyword and starts lexing packages before the entry file is finished lexing. `use` not followed by static strings is not an import and follows different logic.
 
 ```
 # Import Libraries
