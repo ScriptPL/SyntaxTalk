@@ -48,7 +48,7 @@ fn int_function (i num) -> num {
 
 ## Functions
 
-Functions are blocks of logic that can be automated to act in a certain order. All functions, unless lambdas, are declared with the `fn` keyword. A function is automatically exited at the end of its' scope or earlier with the `ret` keyword
+Functions are blocks of logic that can be automated to act in a certain order. All functions, unless lambdas, are declared with the `fn` keyword. A function is automatically exited at the end of its' scope or earlier with the `ret` keyword. Functions without parameters can leave out the round brackets such is the case of `fn main { ... }`
 
 ```
 fn is_divisible (dividend uint, divisor uint) -> bool {
