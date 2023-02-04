@@ -140,3 +140,29 @@ fn fibonacci (x uint) {
     }
 }
 ```
+
+### Loops
+
+#### Traditional For Loop
+
+```
+for be i = 0; i < 10: i += 1 {
+    # loop from i = 0 to i = 9
+}
+```
+
+The shortcut for this particular for loop would be `for be i = 9` which loops from `0` to `9` inclusively. If the variable is irrelevant you can skip the declaration part and specify how many iterations should execute `for 10`
+
+#### While Loop
+
+```
+for condition {
+    # while condition
+}
+```
+
+A while loop is a started by writing a condition after the `for` keyword. To loop indefinitely, you can skip the condition part and just write `for { ... }`
+
+#### 'in' as in 'for ... in ...'
+
+TBA
