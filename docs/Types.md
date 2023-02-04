@@ -25,7 +25,7 @@ type IntVec = Vec<int>
 type Enum (
     Member1 |
     Member2 |
-    Member3 (str, usize)
+    Member3 (str, uint)
 )
 ```
 
@@ -33,7 +33,7 @@ type Enum (
 
 ```
 type Structure (
-    field1 usize,
+    field1 uint,
     field2 str = "default value",
     field3 AnotherType
 )
@@ -42,7 +42,7 @@ type Structure (
 #### Tuples
 
 ```
-type Tuple = (usize, str, bool)
+type Tuple = (uint, str, bool)
 type Vec3 = [int * 3]
 ```
 
@@ -96,4 +96,28 @@ be s str # Declaring variable without initializing
 if be Enum.Member3 (string_variable, numeric_variable) = e {
     # e is Enum.Member3 and variables can be used
 }
+```
+
+## Methods
+
+Types are declared in one place with their data, methods do not coexist in the same declaration but are added outside. The first thing to do is to navigate into the correct scope. Static functions are declared like regular `fn`s, dynamic methods require the `self` parameter as first argument
+
+```
+Type {
+    fn this_is_static {
+        # This method is static and requires no arguments
+    }
+
+    fn this_is_static_2 (i uint) {
+        # This method is static and requires an unsigned integer argument
+    }
+    
+    fn this_is_dynamic (self, i uint) {
+        # This method is dynamic and requires an integer argument
+    }
+}
+
+be k Type
+Type.this_is_static()   # static function call
+k.this_is_dynamic(5)    # dynamic method call
 ```
