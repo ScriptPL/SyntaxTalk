@@ -36,3 +36,28 @@ println("b")            # b
 ```
 
 The `throw` keyword will automatically end a promise and pass by the error.
+
+### Synchronized Functions
+
+```
+# Read Synchronization
+fn synchronized_read_method(sync <R> self) -> int {
+    ...
+}
+
+# Write Synchronization
+fn synchronized_method(sync <RW> self, t int) {
+    ...
+}
+
+# Synchronization
+fn static_function(...) {
+    ...
+    
+    sync <RW> var1, <R> var2, ... {
+        ...
+    }
+    
+    ...
+}
+```
