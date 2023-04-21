@@ -132,34 +132,7 @@ Type.this_is_static()   # static function call
 k.this_is_dynamic(5)    # dynamic method call
 ```
 
-### Traits
-
-#### Declaration
-
-A trait is a `type` that contains a collection of a functions `fn`, hence the syntactic declaration `type fn`
-
-```
-type fn Trait {
-    fn dynamic_method(self, usize, str)
-    fn dynamic_method_without_args(self)
-}
-```
-
-#### Implementing Trait for a Type
-
-A type 'implements' a trait or it simply `use`s that behaviour.
-
-```
-Type use Trait {
-    fn dynamic_method(self, usize, str) {
-        ...
-    }
-    
-    fn dynamic_method_without_args (self) {
-        ...
-    }
-}
-```
+### [Traits](./Traits.md)
 
 #### Native Functions
 
