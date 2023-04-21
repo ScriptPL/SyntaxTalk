@@ -27,3 +27,75 @@ Type use Trait {
 ```
 
 ## Std-Lib Trait Hierarchy
+
+#### Length
+
+```
+type fn Length {
+    fn len(self) -> uint
+}
+```
+
+#### Iter
+
+```
+type fn Iter<T> {
+    fn next(self) -> Opt<T>
+}
+```
+
+#### Backwards Iter
+
+```
+type fn IterLeft<T> {
+    fn back(self) -> Opt<T>
+}
+```
+
+#### PosIter
+
+```
+type fn IterState<T> use Iter<T> {
+    fn has_next(self) -> bool
+}
+```
+
+#### Indexable
+
+```
+type fn Index<T> use Length, IterState<T> {
+    fn 'index' (self, int) -> Opt<T>
+}
+```
+
+#### Push
+
+```
+type fn Push<T> use Index<T> {
+    fn push (self, T) -> bool
+}
+```
+
+#### Pop
+
+```
+type fn Pop<T> use Index<T> {
+    fn pop (self) -> T
+}
+```
+
+#### Push Left
+
+```
+type fn PushLeft<T> use Index<T> {
+    fn pushl (self, T) -> bool
+}
+```
+
+#### Pop Left
+
+```
+type fn PopLeft<T> use Index<T> {
+    fn popl (self) -> T
+}
+```
