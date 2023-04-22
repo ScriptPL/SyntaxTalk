@@ -11,9 +11,10 @@ fn main {
     for {
         be isPrime = true
     
-        for be j = i {
+        for<l> be j = 2 <= ... < sqrt(i) {
             if i %0 j {
                 isPrime = false
+                ret<l>
             }
         }
         
