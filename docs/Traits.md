@@ -28,6 +28,18 @@ Type use Trait {
 
 ## Std-Lib Trait Hierarchy
 
+#### Initialization/ Default Value
+
+```
+type fn Init<T> {
+    fn new(self) -> T
+}
+
+type fn Default<T> {
+    fn default() -> T
+}
+```
+
 #### Collection/ Set
 
 ```
