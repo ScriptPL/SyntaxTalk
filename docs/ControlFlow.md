@@ -107,6 +107,11 @@ a && b && c
 l1 || l2
 ```
 
+##### Range
+
+`start < ... < end` with `...` declares a Range. It can be iterated over or redefined.
+`start <= ... + step <= end` is a stepped Range
+
 #### 'in' as a preposition
 
 `x in y` can be interpreted like a function `in(x, y)` and overriden. Such is the case for types `[str] in [str]` for contains substring, `[T] in [array of T]` for contains element, range detection like `num in range` for finding if an element is part of range, or the classic `variable in Trait` to see wether the variable is part of a certain trait logic.
