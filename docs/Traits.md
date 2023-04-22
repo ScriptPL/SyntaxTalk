@@ -28,73 +28,56 @@ Type use Trait {
 
 ## Std-Lib Trait Hierarchy
 
-#### Length
+### Collection/ Set
 
 ```
 type fn Length {
     fn len(self) -> uint
+}
+
+type fn Index<T> use Length, IterState<T> {
+    fn 'index' (self, int) -> Opt<T>
 }
 ```
 
 #### Iter
 
 ```
-type fn Iter<T> {
+type fn Next<T> {
     fn next(self) -> Opt<T>
 }
-```
 
-#### Backwards Iter
-
-```
-type fn IterLeft<T> {
-    fn back(self) -> Opt<T>
-}
-```
-
-#### PosIter
-
-```
-type fn IterState<T> use Iter<T> {
+type fn HasNext<T> {
     fn has_next(self) -> bool
 }
-```
 
-#### Indexable
+# Backwards Iterator
 
-```
-type fn Index<T> use Length, IterState<T> {
-    fn 'index' (self, int) -> Opt<T>
+type fn Back<T> {
+    fn back(self) -> Opt<T>
+}
+
+
+type fn HasBack<T> {
+    fn has_back(self) -> bool
 }
 ```
 
-#### Push
+#### Queue
 
 ```
-type fn Push<T> use Index<T> {
-    fn push (self, T) -> bool
+type fn PushRight<T> use Index<T> {
+    fn pushr (self, T) -> bool
 }
-```
 
-#### Pop
-
-```
-type fn Pop<T> use Index<T> {
-    fn pop (self) -> T
+type fn PopRight<T> use Index<T> {
+    fn popr (self) -> T
 }
-```
 
-#### Push Left
-
-```
 type fn PushLeft<T> use Index<T> {
     fn pushl (self, T) -> bool
 }
-```
 
-#### Pop Left
-
-```
 type fn PopLeft<T> use Index<T> {
     fn popl (self) -> T
 }
