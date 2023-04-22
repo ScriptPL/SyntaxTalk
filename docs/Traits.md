@@ -126,3 +126,21 @@ type fn Shr<T, R> use Group<T, '>>', 1> {
     fn '>>' (self, T) -> R
 }
 ```
+
+#### Logic
+
+```
+TODO
+```
+
+#### Setter
+
+```
+TODO
+```
+
+#### Special
+
+```
+TODO
+```
