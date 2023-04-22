@@ -82,3 +82,47 @@ type fn PopLeft<T> use Index<T> {
     fn popl (self) -> T
 }
 ```
+
+#### Math & Group Theory
+
+TODO How to make Group Theory better?
+
+```
+type fn Group<T, Symbol, Neutral use T> {
+    # TODO Native?
+    # The Unary Operation is automatically generated:
+    # Unary(x) = Binary(Neutral, x)
+}
+
+type fn Add<T, R> use Group<T, '+', 0> {
+    fn '+' (self, T) -> R
+}
+
+type fn Sub<T, R> use Group<T, '-', 0> {
+    fn '-' (self, T) -> R
+}
+
+type fn Mul<T, R> use Group<T, '*', 1> {
+    fn '*' (self, T) -> R
+}
+
+type fn Div<T, R> use Group<T, '/', 1> {
+    fn '/' (self, T) -> R
+}
+
+type fn Mod<T, R> use Group<T, '%', 1> {
+    fn '%' (self, T) -> R
+}
+
+type fn Exp<T, R> use Group<T, '^', 1> {
+    fn '^' (self, T) -> R
+}
+
+type fn Shl<T, R> use Group<T, '<<', 1> {
+    fn '<<' (self, T) -> R
+}
+
+type fn Shr<T, R> use Group<T, '>>', 1> {
+    fn '>>' (self, T) -> R
+}
+```
