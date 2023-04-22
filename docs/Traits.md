@@ -28,7 +28,7 @@ Type use Trait {
 
 ## Std-Lib Trait Hierarchy
 
-### Collection/ Set
+#### Collection/ Set
 
 ```
 type fn Length {
